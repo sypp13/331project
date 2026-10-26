@@ -1,6 +1,8 @@
 package ub.cse.algo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class Solution {
 
@@ -32,6 +34,15 @@ public class Solution {
         /* TODO: Your solution goes here */
         //TEST FOR GITHUB
         //poopoo kaka
+        sol.paths = Traversals.bfsPaths(graph, clients);
+
+        //populate priority array
+        for (int i = 0; i < clients.size(); i++){
+            sol.priorities.put(clients.get(i).id, clients.get(i).priority);
+        }
+        //bandwidths
+        sol.bandwidths = bandwidths;
+
         return sol;
     }
 }
